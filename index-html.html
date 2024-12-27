@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bookmark Hub</title>
+    <link rel="stylesheet" href="styles.css">
+    <!-- Include Boxicons for icons -->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body>
+    <div class="header-container">
+        <header>
+            <div class="header-left">
+                <div class="logo-container">
+                    <i class='bx bx-bookmark-heart'></i>
+                    <h1>Bookmark Hub</h1>
+                </div>
+                <div class="search-container">
+                    <i class='bx bx-search'></i>
+                    <input type="text" placeholder="Search bookmarks..." id="searchInput">
+                </div>
+            </div>
+            <div class="header-right">
+                <button class="theme-toggle" onclick="toggleTheme()" title="Toggle theme">
+                    <i class='bx bx-moon'></i>
+                </button>
+                <button class="add-button" onclick="openModal()">
+                    <i class='bx bx-plus'></i>
+                    <span>Add Bookmark</span>
+                </button>
+            </div>
+        </header>
+    </div>
+
+    <div class="container">
+        <div id="bookmarksList" class="bookmarks-list"></div>
+    </div>
+
+    <div class="modal-overlay" id="modalOverlay">
+        <div class="modal">
+            <div class="modal-header">
+                <h2><i class='bx bx-bookmark-plus'></i> Add New Bookmark</h2>
+                <button class="close-button" onclick="closeModal()">
+                    <i class='bx bx-x'></i>
+                </button>
+            </div>
+            <div class="form-group">
+                <label for="titleInput">Title</label>
+                <div class="input-container">
+                    <i class='bx bx-text'></i>
+                    <input type="text" id="titleInput" placeholder="Enter bookmark title">
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="urlInput">URL</label>
+                <div class="input-container">
+                    <i class='bx bx-link'></i>
+                    <input type="url" id="urlInput" placeholder="Enter website URL">
+                </div>
+            </div>
+            <div class="modal-buttons">
+                <button class="cancel-button" onclick="closeModal()">
+                    <i class='bx bx-x'></i> Cancel
+                </button>
+                <button class="save-button" onclick="saveBookmark()">
+                    <i class='bx bx-save'></i> Save
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
